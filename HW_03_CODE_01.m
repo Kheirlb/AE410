@@ -8,3 +8,5 @@ omega_n = 10;
 
 t_0 = 0;
 t_f = (3*pi)/(2*omega_n);
+
+%hello jaden
