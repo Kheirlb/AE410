@@ -16,7 +16,10 @@ t_f = (3*pi)/(2*w_n);
 t_f = 2*pi;
 t = linspace(t_0,t_f,1000);
 
-x = (sqrt(x_0 + (v_0/w_n)^2)) * sin(w_n*t + atan((x_0*w_n)/v_0));
+phi = atan(x_0 * w_n/v_0);
+X = x_0/sin(phi);
+
+x = X * sin(w_n*t + phi);
 fig1 = figure;
 plot(t,x)
 xlabel('$t$', 'Interpreter','latex');
@@ -24,7 +27,7 @@ ylabel('$\theta(t)$', 'Interpreter','latex');
 title('Undamped Response');
 grid on;
 
-v = w_n*(sqrt(x_0 + (v_0/w_n)^2)) * cos(w_n*t + atan((x_0*w_n)/v_0));
+v = X * w_n * cos(w_n*t + phi);
 fig2 = figure;
 plot(x,v)
 xlabel('$\theta(t)$', 'Interpreter','latex');
