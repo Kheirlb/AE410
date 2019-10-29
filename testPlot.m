@@ -26,3 +26,7 @@ plot(x2,v2);
 plot(x3,v3);
 plot(x4,v4);
 legend('0','Under','1','Over');
+xlabel('$\theta(t)$', 'Interpreter','latex');
+ylabel('$\dot{\theta}(t)$', 'Interpreter','latex');
+title('Phase Plane');
+grid on;
