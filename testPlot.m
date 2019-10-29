@@ -20,9 +20,9 @@ x4 = x;
 v4 = v;
 
 close all;
-%plot(x1,v1);
+plot(x1,v1);
 hold on;
 plot(x2,v2);
 plot(x3,v3);
 plot(x4,v4);
-legend('Under','1','Over');
+legend('0','Under','1','Over');
