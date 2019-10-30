@@ -1,4 +1,4 @@
-% HW_03_CODE_02.m
+% HW_03_CODE_06.m
 % Authors: Karl Parks and Jaden Bowyer
 % x = theta
 % v = theta_dot
@@ -15,16 +15,12 @@ t_0 = 0;
 t_f = (3*pi)/(2*w_n);
 t = linspace(t_0,t_f,1000);
 
-phi = atan(x_0 * w_n/v_0);
-X = x_0/sin(phi);
+x = exp(-w_n*t).*(x_0 + (v_0+x_0*w_n)*(t));
 
-x = X * sin(w_n*t + phi);
-
-v = X * w_n * cos(w_n*t + phi);
+v = exp(-w_n*t).*(-x_0*w_n + (v_0+x_0*w_n)*(-t*w_n + 1));
 fig2 = figure;
 plot(x,v)
 xlabel('$\theta(t)$ [rad]', 'Interpreter','latex');
 ylabel('$\dot{\theta}(t)$ [rad/s]', 'Interpreter','latex');
-title('Undamped Phase Plane');
+title('Critically Damped Phase Plane');
 grid on;
-

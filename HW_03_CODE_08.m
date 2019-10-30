@@ -1,4 +1,4 @@
-% HW_03_CODE_02.m
+% HW_03_CODE_08.m
 % Authors: Karl Parks and Jaden Bowyer
 % x = theta
 % v = theta_dot
@@ -15,16 +15,14 @@ t_0 = 0;
 t_f = (3*pi)/(2*w_n);
 t = linspace(t_0,t_f,1000);
 
-phi = atan(x_0 * w_n/v_0);
-X = x_0/sin(phi);
+c2 = (v_0 + w_n*x_0*(2 - sqrt(3)))/(-2*w_n*sqrt(3));
+c1 = x_0 - c2;
+x = c1*exp(w_n*t*(-2+sqrt(3))) + c2*exp(w_n*t*(-2-sqrt(3)));
 
-x = X * sin(w_n*t + phi);
-
-v = X * w_n * cos(w_n*t + phi);
+v = c1*(w_n*(-2+sqrt(3)))*exp(w_n*t*(-2+sqrt(3))) + c2*(w_n*(-2-sqrt(3)))*exp(w_n*t*(-2-sqrt(3)));
 fig2 = figure;
 plot(x,v)
 xlabel('$\theta(t)$ [rad]', 'Interpreter','latex');
 ylabel('$\dot{\theta}(t)$ [rad/s]', 'Interpreter','latex');
-title('Undamped Phase Plane');
+title('Overdamped Phase Plane');
 grid on;
-

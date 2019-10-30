@@ -13,24 +13,14 @@ w_n = 10;
 
 t_0 = 0;
 t_f = (3*pi)/(2*w_n);
-t_f = 2*pi;
 t = linspace(t_0,t_f,1000);
 
-%x = x_0*exp(-w_n*t) + (v_0+x_0*w_n)*(t.*exp(-w_n*t));
-x = exp(-w_n*t).*(x_0 + (v_0+x_0*w_n)*(t));
+phi = atan((4*v_0)/(-x_0*w_n*sqrt(15)) - 1/sqrt(15));
+X = x_0/(cos(phi));
+x = (exp((-w_n/4)*t) * X).*(cos(w_n*t*(sqrt(15)/4) + phi));
 fig1 = figure;
 plot(t,x)
-xlabel('$t$', 'Interpreter','latex');
-ylabel('$\theta(t)$', 'Interpreter','latex');
-title('Critically Damped Response');
+xlabel('$t$ [s]', 'Interpreter','latex');
+ylabel('$\theta(t)$ [rad]', 'Interpreter','latex');
+title('Underdamped Response');
 grid on;
-
-v = exp(-w_n*t).*(-x_0*w_n + (v_0+x_0*w_n)*(-t*w_n + 1));
-fig2 = figure;
-plot(x,v)
-xlabel('$\theta(t)$', 'Interpreter','latex');
-ylabel('$\dot{\theta}(t)$', 'Interpreter','latex');
-title('Critically Damped Phase Plane');
-grid on;
-
-%hello jaden

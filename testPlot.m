@@ -5,17 +5,17 @@ t_f = (3*pi)/(2*w_n);
 t_f = 2*pi;
 t = linspace(t_0,t_f,1000);
 
-HW_03_CODE_01;
+HW_03_CODE_01n2;
 
 x1 = x;
 v1 = v;
-HW_03_CODE_02;
+HW_03_CODE_03n4;
 x2 = x;
 v2 = v;
-HW_03_CODE_03;
+HW_03_CODE_05n6;
 x3 = x;
 v3 = v;
-HW_03_CODE_04;
+HW_03_CODE_07n8;
 x4 = x;
 v4 = v;
 
